@@ -44,9 +44,17 @@ Nakama Streaming li mette tutti in un'unica app, con i tuoi titoli preferiti sem
 
 ## Com'è
 
-| Sul PC e sulla TV | Sul telefono |
-| --- | --- |
-| <img src="immagini/pc-tv-in-diretta.png" width="560" alt="TV in diretta su PC"> | <img src="immagini/telefono-home.png" width="200" alt="Home sul telefono"> <img src="immagini/telefono-tv-in-diretta.png" width="200" alt="TV in diretta sul telefono"> |
+<p align="center"><b>Sul PC e sulla TV</b></p>
+<p align="center">
+  <img src="immagini/pc-tv-in-diretta.png" width="860" alt="TV in diretta su PC: i canali gratuiti in chiaro">
+</p>
+
+<p align="center"><b>Sul telefono</b></p>
+<p align="center">
+  <img src="immagini/telefono-home.png" width="260" alt="Home sul telefono">
+  &nbsp;&nbsp;
+  <img src="immagini/telefono-tv-in-diretta.png" width="260" alt="TV in diretta sul telefono">
+</p>
 
 ## Scarica
 
