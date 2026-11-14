@@ -1,0 +1,74 @@
+# Porta su GitHub ogni nuova versione di Nakama Streaming, chiunque l'abbia pubblicata.
+# Ogni 3 ore confronta la versione del sito dell'app con l'ultima Release: se il sito ha
+# una versione più nuova, scarica da lì APK e installer Windows, controlla che l'APK sia
+# proprio quella versione e crea la Release (diventa la "latest" dei link fissi).
+# Le note vengono da novita/note-<versione>.md se c'è, altrimenti un testo generico.
+# Questo file si aggiorna da pubblicazione-github/ultima-versione.yml con tool/pagina_github.ps1.
+name: Ultima versione
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ultima-versione
+  cancel-in-progress: false
+
+jobs:
+  controlla:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pubblica la versione del sito se manca
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SITO: https://nakama-streaming-92986.web.app
+        run: |
+          set -euo pipefail
+          curl -fsSL "$SITO/version.json?c=$(date +%s)" -o version.json
+          VER=$(jq -r .version version.json)
+          if ! [[ "$VER" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then echo "Versione non valida sul sito: $VER"; exit 1; fi
+          ULTIMA=$(gh release view --repo "$REPO" --json tagName -q .tagName 2>/dev/null | sed 's/^v//' || true)
+          echo "Sito: $VER - GitHub: ${ULTIMA:-nessuna}"
+          if [ -n "$ULTIMA" ] && [ "$(printf '%s\n%s\n' "$ULTIMA" "$VER" | sort -V | tail -1)" = "$ULTIMA" ]; then
+            echo "GitHub ha già l'ultima versione"; exit 0
+          fi
+          if gh release view "v$VER" --repo "$REPO" >/dev/null 2>&1; then echo "v$VER esiste già"; exit 0; fi
+
+          mkdir file
+          curl -fsSL "$SITO/download/nakama-streaming.bin?v=$VER" -o file/Nakama-Streaming.apk
+          curl -fsSL "$SITO/download/nakama-streaming-setup.bin?v=$VER" -o file/Nakama-Streaming-Setup.exe
+          AAPT="$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)aapt2"
+          versione_apk() { "$AAPT" dump badging "$1" | sed -n "s/.*versionName='\([^']*\)'.*/\1/p" | head -1; }
+          if [ "$(versione_apk file/Nakama-Streaming.apk)" != "$VER" ]; then echo "L'APK sul sito non è la $VER"; exit 1; fi
+          if [ "$(head -c 2 file/Nakama-Streaming-Setup.exe)" != "MZ" ]; then echo "L'installer sul sito non è valido"; exit 1; fi
+          if curl -fsSL "$SITO/download/nakama-streaming-arm64.bin?v=$VER" -o leggera.apk 2>/dev/null \
+             && [ "$(versione_apk leggera.apk)" = "$VER" ]; then
+            mv leggera.apk file/Nakama-Streaming-arm64.apk
+          else
+            echo "Versione leggera arm64 della $VER non disponibile sul sito: si pubblica senza"
+          fi
+
+          if gh api "repos/$REPO/contents/novita/note-$VER.md" -q .content > note.b64 2>/dev/null; then
+            base64 -d note.b64 > note.md
+          else
+            {
+              echo "## Novità"
+              echo
+              echo "Correzioni e miglioramenti. L'app installata si aggiorna da sola."
+              echo
+              echo "## Quale file scaricare"
+              echo
+              echo "- **Windows 10 e 11**: \`Nakama-Streaming-Setup.exe\`"
+              echo "- **Android e Android TV**: \`Nakama-Streaming.apk\`"
+              if [ -f file/Nakama-Streaming-arm64.apk ]; then echo "- **Android, versione leggera** (telefoni degli ultimi anni): \`Nakama-Streaming-arm64.apk\`"; fi
+              echo
+              echo "Su Windows, se compare \"Windows ha protetto il PC\", premi **Ulteriori informazioni** e poi **Esegui comunque**: il programma non ha ancora una firma digitale."
+            } > note.md
+          fi
+          gh release create "v$VER" file/* --repo "$REPO" --title "Nakama Streaming $VER" --notes-file note.md --latest
+          echo "Pubblicata la $VER"
