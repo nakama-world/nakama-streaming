@@ -10,6 +10,11 @@ on:
   schedule:
     - cron: '17 */3 * * *'
   workflow_dispatch:
+    inputs:
+      prova:
+        description: 'Solo prova: scarica e controlla i file della versione del sito, senza pubblicare'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -27,6 +32,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
           SITO: https://nakama-streaming-92986.web.app
+          PROVA: ${{ inputs.prova == true }}
         run: |
           set -euo pipefail
           curl -fsSL "$SITO/version.json?c=$(date +%s)" -o version.json
@@ -34,10 +40,12 @@ jobs:
           if ! [[ "$VER" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then echo "Versione non valida sul sito: $VER"; exit 1; fi
           ULTIMA=$(gh release view --repo "$REPO" --json tagName -q .tagName 2>/dev/null | sed 's/^v//' || true)
           echo "Sito: $VER - GitHub: ${ULTIMA:-nessuna}"
-          if [ -n "$ULTIMA" ] && [ "$(printf '%s\n%s\n' "$ULTIMA" "$VER" | sort -V | tail -1)" = "$ULTIMA" ]; then
-            echo "GitHub ha già l'ultima versione"; exit 0
+          if [ "$PROVA" != "true" ]; then
+            if [ -n "$ULTIMA" ] && [ "$(printf '%s\n%s\n' "$ULTIMA" "$VER" | sort -V | tail -1)" = "$ULTIMA" ]; then
+              echo "GitHub ha già l'ultima versione"; exit 0
+            fi
+            if gh release view "v$VER" --repo "$REPO" >/dev/null 2>&1; then echo "v$VER esiste già"; exit 0; fi
           fi
-          if gh release view "v$VER" --repo "$REPO" >/dev/null 2>&1; then echo "v$VER esiste già"; exit 0; fi
 
           mkdir file
           curl -fsSL "$SITO/download/nakama-streaming.bin?v=$VER" -o file/Nakama-Streaming.apk
@@ -69,6 +77,12 @@ jobs:
               echo
               echo "Su Windows, se compare \"Windows ha protetto il PC\", premi **Ulteriori informazioni** e poi **Esegui comunque**: il programma non ha ancora una firma digitale."
             } > note.md
+          fi
+          if [ "$PROVA" = "true" ]; then
+            echo "PROVA: verrebbe pubblicata la $VER con questi file e queste note:"
+            ls -l file
+            cat note.md
+            exit 0
           fi
           gh release create "v$VER" file/* --repo "$REPO" --title "Nakama Streaming $VER" --notes-file note.md --latest
           echo "Pubblicata la $VER"
