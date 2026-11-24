@@ -46,14 +46,11 @@ Non ospita e non distribuisce video: apre i siti e i servizi che scegli tu, cos�
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#141417', 'primaryTextColor': '#FFFFFF', 'primaryBorderColor': '#D4AF37', 'lineColor': '#D4AF37', 'secondaryColor': '#1D1D22', 'tertiaryColor': '#000000', 'fontFamily': 'Lato, sans-serif'}}}%%
 flowchart LR
-    S["I tuoi siti<br>e servizi"] --> N["Nakama<br>Streaming"]
-    U["Uscite, classifiche<br>e cinema in Italia"] --> N
-    N --> H["Home<br>cosa c'è di nuovo"]
-    H --> T["Scheda del titolo<br>dove si vede"]
-    T --> G["Guarda<br>si apre il servizio"]
-    G --> R["Riprende dal minuto<br>e passa alla puntata dopo"]
-    R --> A["Avviso<br>quando esce il resto"]
-    A --> H
+    S["I tuoi siti<br>e le uscite<br>in Italia"] --> N["Nakama<br>Streaming"]
+    N --> H["Home<br>cosa c'è<br>di nuovo"]
+    H --> G["Guarda<br>si apre<br>il servizio"]
+    G --> R["Riprende<br>e passa alla<br>puntata dopo"]
+    R -- avviso --> H
 ```
 
 1. **Aggiungi i siti che usi.** Nella scheda Siti ci sono già i servizi italiani più noti: un tocco e sono tuoi. Per gli altri basta incollare il link.
@@ -70,9 +67,9 @@ flowchart LR
 In alto scorrono le novità con il loro trailer, in italiano quando esiste. Sotto ci sono la Top 20 dei film, delle serie e degli anime, i film **ora al cinema**, le file dedicate a ogni piattaforma, le feste e i migliori di sempre per genere.
 
 <p align="center">
-  <img src="immagini/tv-home.jpg" width="440" alt="La Home sulla TV, con il titolo del momento">
+  <img src="immagini/tv-home.jpg" width="400" alt="La Home sulla TV, con il titolo del momento">
   &nbsp;
-  <img src="immagini/pc-anteprima.jpg" width="440" alt="L'anteprima di un film passando sulla copertina">
+  <img src="immagini/pc-anteprima.jpg" width="400" alt="L'anteprima di un film passando sulla copertina">
 </p>
 
 ### Una scheda che risponde alle domande
@@ -83,9 +80,9 @@ Di cosa parla, quanto dura, per che età, quando esce, chi c'è e **dove si vede
   <img src="immagini/pc-scheda.jpg" width="860" alt="La scheda di un film: trama, genere, uscita, cast e piattaforma italiana">
 </p>
 <p align="center">
-  <img src="immagini/tv-stagioni.jpg" width="440" alt="Il menu delle stagioni con le puntate e le date di uscita">
+  <img src="immagini/tv-stagioni.jpg" width="400" alt="Il menu delle stagioni con le puntate e le date di uscita">
   &nbsp;
-  <img src="immagini/tv-prima-e-dopo.jpg" width="440" alt="Prima e dopo: l'ordine in cui guardare una saga">
+  <img src="immagini/tv-prima-e-dopo.jpg" width="400" alt="Prima e dopo: l'ordine in cui guardare una saga">
 </p>
 
 ### Le piattaforme, separate per film e serie
