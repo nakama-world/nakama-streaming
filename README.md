@@ -4,12 +4,13 @@
   <sub><b>STREAMING</b></sub>
 </p>
 
-<h3 align="center">Film, serie TV, anime, manga e TV in diretta in un'unica app.<br>Gratis, per Windows, Android, Android TV e browser.</h3>
+<h3 align="center">Film, serie TV, anime, manga e TV in diretta in un'unica app.<br>Gratis, in italiano, per Windows, Android, Android TV e browser.</h3>
 
 <p align="center">
   <a href="https://github.com/nakama-world/nakama-streaming/releases/latest"><img src="https://img.shields.io/github/v/release/nakama-world/nakama-streaming?label=versione&color=D4AF37&labelColor=000000" alt="Ultima versione"></a>
   <a href="https://github.com/nakama-world/nakama-streaming/releases"><img src="https://img.shields.io/github/downloads/nakama-world/nakama-streaming/total?label=download&color=D4AF37&labelColor=000000" alt="Download"></a>
   <img src="https://img.shields.io/badge/prezzo-gratis-D4AF37?labelColor=000000" alt="Gratis">
+  <img src="https://img.shields.io/badge/pubblicità-nessuna-D4AF37?labelColor=000000" alt="Nessuna pubblicità">
   <img src="https://img.shields.io/badge/lingua-italiano-D4AF37?labelColor=000000" alt="In italiano">
 </p>
 
@@ -20,41 +21,116 @@
 </p>
 
 <p align="center">
-  <img src="immagini/pc-home.png" width="860" alt="Nakama Streaming su PC: i servizi di streaming in un'unica schermata">
+  <img src="immagini/pc-home.jpg" width="900" alt="La Home su PC: il titolo del momento in grande e la Top 20 dei film, ognuno con la piattaforma dove si vede in Italia">
 </p>
-
-## Perché Nakama Streaming
-
-Hai RaiPlay, Mediaset Infinity, Netflix, Prime Video, Crunchyroll, un sito per i manga e mille schede aperte?
-Nakama Streaming li mette tutti in un'unica app, con i tuoi titoli preferiti sempre a portata di mano.
-
-- **Tutti i tuoi servizi in un posto.** Aggiungi i siti che usi già con un tocco e li apri con il tuo abbonamento, senza cercare link.
-- **Riprendi da dove eri.** Ricorda la puntata e il minuto in cui ti eri fermato. A fine puntata parte il conto alla rovescia e passa da sola alla successiva.
-- **Avvisi delle uscite.** Ti avvisa quando esce una nuova puntata, un nuovo capitolo o un film che segui, anche ad app chiusa.
-- **TV in diretta.** I canali gratuiti in chiaro (Rai, Mediaset, La7, notizie, film, documentari) dalle dirette ufficiali delle emittenti.
-- **Manga.** Le piattaforme ufficiali in italiano e i siti dove leggi, con il segno del capitolo a cui eri arrivato.
-- **Niente popup.** Il browser integrato blocca popup e pubblicità invasive dei siti.
-- **Fatta per la TV.** Su Android TV si usa tutta con il telecomando.
-- **Ovunque con un account, o anche senza.** Con l'account ritrovi preferiti e progressi su PC, telefono e TV. Come ospite i dati restano solo sul tuo dispositivo.
-- **Gratis al 100%.** Niente abbonamenti, niente pubblicità, niente costi nascosti.
 
 <p align="center">
-  <img src="immagini/benvenuto.png" width="420" alt="Benvenuto in Nakama Streaming: gratuita, non ospita video, decidi tu cosa aggiungere">
+  <a href="#cosè">Cos'è</a> ·
+  <a href="#come-funziona">Come funziona</a> ·
+  <a href="#cosa-ci-trovi">Cosa ci trovi</a> ·
+  <a href="#scarica">Scarica</a> ·
+  <a href="#installazione">Installazione</a> ·
+  <a href="#domande-frequenti">Domande frequenti</a> ·
+  <a href="#in-english">English</a>
 </p>
 
-## Com'è
+## Cos'è
 
-<p align="center"><b>Sul PC e sulla TV</b></p>
+Hai RaiPlay, Mediaset Infinity, Netflix, Prime Video, Crunchyroll, un sito per i manga e mille schede aperte?
+**Nakama Streaming li riunisce in un'unica app.** Ti dice cosa c'è di nuovo e dove vederlo in Italia, apre il servizio che scegli, ricorda la puntata e il minuto, e ti avvisa quando esce quella dopo.
+
+Non ospita e non distribuisce video: apre i siti e i servizi che scegli tu, così come sono. Per i servizi a pagamento serve il tuo abbonamento.
+
+## Come funziona
+
+```mermaid
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#141417', 'primaryTextColor': '#FFFFFF', 'primaryBorderColor': '#D4AF37', 'lineColor': '#D4AF37', 'secondaryColor': '#1D1D22', 'tertiaryColor': '#000000', 'fontFamily': 'Lato, sans-serif'}}}%%
+flowchart LR
+    S["I tuoi siti<br>e servizi"] --> N["Nakama<br>Streaming"]
+    U["Uscite, classifiche<br>e cinema in Italia"] --> N
+    N --> H["Home<br>cosa c'è di nuovo"]
+    H --> T["Scheda del titolo<br>dove si vede"]
+    T --> G["Guarda<br>si apre il servizio"]
+    G --> R["Riprende dal minuto<br>e passa alla puntata dopo"]
+    R --> A["Avviso<br>quando esce il resto"]
+    A --> H
+```
+
+1. **Aggiungi i siti che usi.** Nella scheda Siti ci sono già i servizi italiani più noti: un tocco e sono tuoi. Per gli altri basta incollare il link.
+2. **Guarda la Home.** Trovi le novità del momento, le Top 20, i film al cinema e le uscite di ogni piattaforma. Sotto ogni titolo c'è scritto dove si vede in Italia.
+3. **Apri una scheda.** Trama, trailer, stagioni e puntate, ordine di visione, cast e chi lo distribuisce in Italia.
+4. **Premi Guarda.** L'app apre il sito o il servizio giusto, con il tuo abbonamento, e blocca popup e pubblicità invasive.
+5. **Riprendi quando vuoi.** Ricorda puntata e minuto su PC, telefono e TV. A fine puntata passa da sola alla successiva.
+6. **Ricevi gli avvisi.** Nuova puntata, nuovo capitolo o film che segui: ti avvisa anche ad app chiusa.
+
+## Cosa ci trovi
+
+### Una Home come quella delle grandi piattaforme
+
+In alto scorrono le novità con il loro trailer, in italiano quando esiste. Sotto ci sono la Top 20 dei film, delle serie e degli anime, i film **ora al cinema**, le file dedicate a ogni piattaforma, le feste e i migliori di sempre per genere.
+
+<p align="center">
+  <img src="immagini/tv-home.jpg" width="440" alt="La Home sulla TV, con il titolo del momento">
+  &nbsp;
+  <img src="immagini/pc-anteprima.jpg" width="440" alt="L'anteprima di un film passando sulla copertina">
+</p>
+
+### Una scheda che risponde alle domande
+
+Di cosa parla, quanto dura, per che età, quando esce, chi c'è e **dove si vede in Italia**. Per le serie c'è il menu delle stagioni con le puntate e le date. Per i film con seguiti c'è **Prima e dopo**, con l'ordine giusto in cui guardarli.
+
+<p align="center">
+  <img src="immagini/pc-scheda.jpg" width="860" alt="La scheda di un film: trama, genere, uscita, cast e piattaforma italiana">
+</p>
+<p align="center">
+  <img src="immagini/tv-stagioni.jpg" width="440" alt="Il menu delle stagioni con le puntate e le date di uscita">
+  &nbsp;
+  <img src="immagini/tv-prima-e-dopo.jpg" width="440" alt="Prima e dopo: l'ordine in cui guardare una saga">
+</p>
+
+### Le piattaforme, separate per film e serie
+
+Netflix, Prime Video, Disney+, HBO Max, NOW e Sky, Apple TV, Paramount+, RaiPlay, Mediaset Infinity, TIMVISION, discovery+, MGM+ e MUBI. Per gli anime Crunchyroll e Anime Generation. Ogni titolo è assegnato alla sua: una serie di Disney+ resta di Disney+.
+
+### I tuoi preferiti, in ordine
+
+Un elenco semplice diviso in Film, Serie TV e Anime, con quello che stai guardando e a che punto sei.
+
+### TV in diretta
+
+I canali gratuiti in chiaro (Rai, Mediaset, La7, notizie, film, documentari) dalle dirette ufficiali delle emittenti.
+
 <p align="center">
   <img src="immagini/pc-tv-in-diretta.png" width="860" alt="TV in diretta su PC: i canali gratuiti in chiaro">
 </p>
 
-<p align="center"><b>Sul telefono</b></p>
+### Manga
+
+Le piattaforme ufficiali in italiano e i siti dove leggi, con il segno del capitolo a cui eri arrivato.
+
+### Su tutti i tuoi schermi
+
+Sulla TV si usa tutta col telecomando, sul PC con mouse e tastiera, sul telefono con le dita. Con un account (nome utente e password, niente altro) ritrovi siti, preferiti e progressi ovunque. Come ospite i dati restano solo sul tuo dispositivo.
+
 <p align="center">
-  <img src="immagini/telefono-home.png" width="260" alt="Home sul telefono">
+  <img src="immagini/telefono-home.jpg" width="250" alt="La Home sul telefono">
   &nbsp;&nbsp;
-  <img src="immagini/telefono-tv-in-diretta.png" width="260" alt="TV in diretta sul telefono">
+  <img src="immagini/telefono-scheda.jpg" width="250" alt="La scheda di un titolo sul telefono">
+  &nbsp;&nbsp;
+  <img src="immagini/telefono-tv-in-diretta.png" width="250" alt="TV in diretta sul telefono">
 </p>
+
+### E in più
+
+- **I tuoi siti restano raggiungibili.** Se un sito che hai salvato cambia indirizzo, l'app lo segue e sposta da sola i titoli che avevi salvato da lì.
+- **Puntata dopo puntata.** Conto alla rovescia a fine episodio e passaggio alla stagione successiva.
+- **Niente popup.** Il browser integrato ferma finestre e pubblicità invasive.
+- **Si aggiorna da sola.** All'avvio controlla se c'è una versione nuova e la installa.
+- **Gratis al 100%.** Niente abbonamenti, niente pubblicità, niente costi nascosti.
+
+## Novità
+
+Cosa è cambiato in ogni versione è nella pagina [Releases](https://github.com/nakama-world/nakama-streaming/releases).
 
 ## Scarica
 
@@ -65,46 +141,109 @@ Nakama Streaming li mette tutti in un'unica app, con i tuoi titoli preferiti sem
 | Android, versione leggera (telefoni degli ultimi anni) | [Nakama-Streaming-arm64.apk](https://github.com/nakama-world/nakama-streaming/releases/latest/download/Nakama-Streaming-arm64.apk) |
 | iPhone, iPad e qualsiasi browser | [Versione web](https://nakama-streaming-92986.web.app) |
 
-I link scaricano sempre l'ultima versione. Le versioni precedenti e le novità di ognuna sono nella pagina [Releases](https://github.com/nakama-world/nakama-streaming/releases).
+I link scaricano sempre l'ultima versione.
 
 ## Installazione
 
-**Windows**
+<details>
+<summary><b>Windows</b></summary>
+
 1. Apri `Nakama-Streaming-Setup.exe`.
 2. Se compare "Windows ha protetto il PC", premi **Ulteriori informazioni** e poi **Esegui comunque**: il programma non ha ancora una firma digitale.
 3. Quando esce una versione nuova, l'app te lo dice e si aggiorna da sola.
 
-**Telefono Android**
+</details>
+
+<details>
+<summary><b>Telefono Android</b></summary>
+
 1. Apri il file APK scaricato.
 2. Se il telefono lo chiede, permetti l'installazione da questa fonte.
 3. Quando esce una versione nuova, l'app te lo dice all'avvio.
 
-**Android TV**
+</details>
+
+<details>
+<summary><b>Android TV</b></summary>
+
 1. Porta l'APK sulla TV: con una chiavetta USB, oppure con un'app per scaricare file (per esempio Downloader) usando il link "Android e Android TV" qui sopra.
 2. Aprilo e permetti l'installazione da questa fonte, se la TV lo chiede.
+3. Si usa tutta col telecomando: frecce per muoverti, OK per aprire, Indietro per tornare.
 
-**iPhone e iPad**
+</details>
+
+<details>
+<summary><b>iPhone e iPad</b></summary>
+
 1. Apri la [versione web](https://nakama-streaming-92986.web.app) in Safari.
 2. Premi Condividi e poi **Aggiungi alla schermata Home**: la trovi tra le app.
 
+</details>
+
 ## Domande frequenti
 
-**È davvero gratis?**
+<details>
+<summary><b>È davvero gratis?</b></summary>
+
 Sì, del tutto: niente abbonamenti, niente pubblicità, niente acquisti nell'app.
 
-**Nakama Streaming contiene film o serie?**
+</details>
+
+<details>
+<summary><b>Nakama Streaming contiene film o serie?</b></summary>
+
 No. Non ospita e non distribuisce video: apre i siti e i servizi che scegli tu, così come sono. Per i servizi a pagamento serve il tuo abbonamento.
 
-**Devo creare un account?**
-No. Puoi entrare come ospite. L'account (basta un nome utente e una password) serve solo per ritrovare preferiti e progressi su più dispositivi.
+</details>
 
-**Come si aggiorna?**
+<details>
+<summary><b>Devo creare un account?</b></summary>
+
+No. Puoi entrare come ospite. L'account (basta un nome utente e una password) serve solo per ritrovare siti, preferiti e progressi su più dispositivi.
+
+</details>
+
+<details>
+<summary><b>Che fine fanno i miei dati?</b></summary>
+
+Come ospite restano solo sul tuo dispositivo. Con l'account si salvano i siti, i preferiti e i punti a cui sei arrivato, per ritrovarli altrove. Non c'è pubblicità e i dati non si vendono a nessuno.
+
+</details>
+
+<details>
+<summary><b>Perché di un trailer sento l'inglese?</b></summary>
+
+Quando un trailer italiano esiste l'app usa quello. Se esiste solo l'originale, mostra i sottotitoli in italiano quando il video li ha.
+
+</details>
+
+<details>
+<summary><b>Su Windows compare un avviso quando la installo. È normale?</b></summary>
+
+Sì: il programma non ha ancora una firma digitale. Premi **Ulteriori informazioni** e poi **Esegui comunque**.
+
+</details>
+
+<details>
+<summary><b>Come si aggiorna?</b></summary>
+
 Da sola: all'avvio l'app controlla se c'è una versione nuova e la installa.
+
+</details>
+
+<details>
+<summary><b>Ho trovato un problema o ho un'idea</b></summary>
+
+Scrivi a nakamaworldita@gmail.com, oppure apri una segnalazione nella scheda [Issues](https://github.com/nakama-world/nakama-streaming/issues).
+
+</details>
 
 ## In English
 
-Nakama Streaming is a free app for Windows, Android, Android TV and the web that brings your streaming services, live TV, anime, series, films and manga together in one place. It remembers where you stopped, plays the next episode automatically and notifies you of new releases. It does not host any video: it opens the sites and services you choose. The app is in Italian.
+**Nakama Streaming** is a free, ad-free app for Windows, Android, Android TV and the web that brings your streaming services, live TV, films, series, anime and manga together in one place. It shows what is new and where to watch it in Italy, opens the service you choose, remembers the episode and the minute, plays the next episode by itself and notifies you of new releases. It does not host or distribute any video: it opens the sites and services you choose, and paid services need your own subscription. The app is in Italian.
 
-## Contatti
+## Contatti e crediti
 
 Nakama Streaming è un programma di Nakama World: nakamaworldita@gmail.com
+
+I dati e le immagini di film e serie vengono da TMDB. Questo prodotto usa l'API di TMDB ma non è approvato o certificato da TMDB. Marchi, locandine e titoli appartengono ai rispettivi proprietari.
