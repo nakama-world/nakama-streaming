@@ -64,7 +64,7 @@ flowchart LR
 
 ### Una Home come quella delle grandi piattaforme
 
-In alto scorrono le novità con il loro trailer, in italiano quando esiste. Sotto ci sono la Top 20 dei film, delle serie e degli anime, i film **ora al cinema**, le file dedicate a ogni piattaforma, le feste e i migliori di sempre per genere.
+È divisa in **Film**, **Serie TV** e **Anime**. Ognuna comincia allo stesso modo: in alto scorrono le novità con il loro trailer, in italiano quando esiste, poi **Appena usciti** e **Prossimamente**. Sotto ci sono le Top 20, i film **ora al cinema**, le file dedicate a ogni piattaforma, le feste e i generi.
 
 <p align="center">
   <img src="immagini/tv-home.jpg" width="400" alt="La Home sulla TV, con il titolo del momento">
@@ -119,7 +119,7 @@ Sulla TV si usa tutta col telecomando, sul PC con mouse e tastiera, sul telefono
 
 ### E in più
 
-- **I tuoi siti restano raggiungibili.** Se un sito che hai salvato cambia indirizzo, l'app lo segue e sposta da sola i titoli che avevi salvato da lì.
+- **I tuoi siti restano raggiungibili.** Se un sito che hai salvato non si apre più, l'app cerca il suo nuovo indirizzo e te lo propone: col tuo sì sposta anche i titoli salvati da lì. Un indirizzo che funziona non viene mai toccato.
 - **Puntata dopo puntata.** Conto alla rovescia a fine episodio e passaggio alla stagione successiva.
 - **Niente popup.** Il browser integrato ferma finestre e pubblicità invasive.
 - **Si aggiorna da sola.** All'avvio controlla se c'è una versione nuova e la installa.
